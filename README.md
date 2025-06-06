@@ -14,29 +14,29 @@ A fitness tracking application that helps you monitor your exercise journey with
 
 ### Sign Up - Verify your account
 
-![Email Verification](https://imgur.com/aHyM7VX)
-![Account Verified](https://imgur.com/m3npOux)
+![Email Verification](https://imgur.com/aHyM7VX.jpeg)
+![Account Verified](https://i.imgur.com/m3npOux.jpeg)
 Users can sign up with a valid email and strong password, then confirm their account via a link sent by email. After confirmation, they can log in. Invalid logins trigger an alert.
 
 ### Workout Dashboard
 
-![Workout Dashboard](https://imgur.com/7X6nvIU)
+![Workout Dashboard](https://imgur.com/7X6nvIU.jpeg)
 Click "Buff It Up" to add a workout with title, muscle group, reps, and load. Submitting valid inputs adds a timestamped workout card, sorted by newest. Each card includes edit (pen) and delete (trash) icons to update or remove entries. The donut chart visually represents the distribution of muscle groups worked.
 
 ### Profile Settings
 
-![Profile Settings](https://imgur.com/TIl2muw)
+![Profile Settings](https://imgur.com/TIl2muw.jpeg)
 Update your username and upload a custom, cropped profile image via the "Profile Settings" modal. Click "Upload" to save changes or "X" to close. You can also download your data or delete your account from this modal.
 
 ### Database Management
 
-![Workouts Management - Mongoose](https://imgur.com/xczXPlL)
+![Workouts Management - Mongoose](https://imgur.com/xczXPlL.jpeg)
 ![Users Management - Postgres](https://imgur.com/Rm2BwnD)
 Workout data is managed with MongoDB via Mongoose, while user accounts are handled using PostgreSQL, enabling efficient separation of structured and unstructured data.
 
 ### Password Recovery
 
-![Password Reset](https://imgur.com/dmcIOhN)
+![Password Reset](https://imgur.com/dmcIOhN.jpeg)
 Click "Forgot the password?" to request a reset link via email. Follow the link to set a new, strong password. Matching and secure entries will allow you to regain account access.
 
 ## Local Usage
