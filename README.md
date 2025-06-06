@@ -31,7 +31,7 @@ Update your username and upload a custom, cropped profile image via the "Profile
 ### Database Management
 
 ![Workouts Management - Mongoose](https://imgur.com/xczXPlL.jpeg)
-![Users Management - Postgres](https://imgur.com/Rm2BwnD)
+![Users Management - Postgres](https://imgur.com/Rm2BwnD.jpeg)
 Workout data is managed with MongoDB via Mongoose, while user accounts are handled using PostgreSQL, enabling efficient separation of structured and unstructured data.
 
 ### Password Recovery
