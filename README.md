@@ -4,6 +4,7 @@ A fitness tracking application that helps you monitor your exercise journey with
 
 ## Features
 
+* **Effective Sign-Up via Email Account**: Users can sign up by their valid email addresses which are then verified using EtherealMail or NodeMailer functionalities
 * **Profile Management**: Customize your username and profile picture
 * **Workout Tracking**: Log exercises with reps and weights
 * **Visual Progress**: Monitor your muscle group balance with an interactive donut chart
@@ -106,26 +107,36 @@ PG_DB=
 MONGO_URI=
 SECRET=
 SALT=
-EMAIL_HOST=
+#use ethereal email for these fields:
+EMAIL_HOST=smtp.ethereal.email
 EMAIL_USERNAME=
 EMAIL_PASSWORD=
+#OR you can use your preferred account:
+EMAIL_SERVICE=gmail
+EMAIL_USERNAME=yourgmail@gmail.com
+EMAIL_PASSWORD=your_app_password
 ```
 
 **Optional:**
 
 ```
-PORT=
-CLIENT_URL=
-ORIGIN=
-AUTH_TOKEN_EXPIRES_IN_MS=
+#edit these ports as per your need, defaults are provided as follows:
+PORT=6060
+CLIENT_URL=localhost:3000
+ORIGIN=http://localhost:3000
+AUTH_TOKEN_EXPIRES_IN_MS=86400000
+#database limits:
 MAX_USERS=
 MAX_WORKOUTS_PER_USER=
+#rate limiters:
 MAX_API_WORKOUTS_REQS=
 MAX_API_USERS_REQS=
 MAX_API_RESET_PASSWORD_REQS=
+#rate limiter windows:
 API_WORKOUTS_WINDOW_MS=
 API_USERS_WINDOW_MS=
 API_RESET_PASSWORD_WINDOW_MS=
+#retry connections to db
 MAX_RETRIES=
 RETRY_DELAY_MS=
 ```
@@ -138,7 +149,16 @@ REACT_APP_WEB_SERVICE=localhost
 ```
 
 ## Note
-
+If you are planning to deploy gmail with an app password, update the code in backend/src/middleware/sendEmail.js as : 
+```
+const transporter = nodemailer.createTransport({
+  service: 'process.env.EMAIL_SERVICE',  // instead of process.env.EMAIL_HOST
+  auth: {
+    user: process.env.EMAIL_USERNAME, // your Gmail address
+    pass: process.env.EMAIL_PASSWORD  // your Gmail app password
+  }
+});
+```
 This is a demo app with limited storage capacity. Older entries may be automatically removed.
 
 ## Tools and Dependencies \[TECH STACK] <a name="tools"></a>
@@ -157,6 +177,7 @@ This is a demo app with limited storage capacity. Older entries may be automatic
 * Validator – Input validation
 * Handlebars – Templating for emails
 * Ethereal Email – Mock SMTP service for email testing
+* Nodemailer - STMP service for email verifications to email accounts for production level
 
 #### Dev Dependencies
 
