@@ -1,0 +1,41 @@
+@use "../vars";
+@use "../fonts";
+
+.about--container {
+  position: relative;
+  top: 100px;
+  left: 10%;
+  height: fit-content;
+  font-size: 0.8em;
+}
+
+.about--container > p {
+  max-width: 550px;
+}
+
+.github {
+  height: 30px;
+  margin-top: 40px;
+  transition: 0.2s;
+}
+
+.about--gym--pattern--bkg {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: vars.$about--bkg;
+}
+
+@media screen and (max-width: 555px) {
+
+  .about--container {
+    max-width: 400px;
+    padding-right: 50px;
+  }
+
+  .github {
+    display: inline-block;
+  }
+  
+}

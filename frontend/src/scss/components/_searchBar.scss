@@ -1,0 +1,58 @@
+@use "../vars";
+@use "../fonts";
+
+.search--bar {
+  grid-area: search;
+  z-index: 3;
+  display: flex;
+  position: relative;
+  top: 0;
+  left: 40px;
+  height: unset;
+  width: 180px;
+  min-width: unset;
+  padding: unset;
+  background: none;
+  box-shadow: none;
+}
+
+.search--bar > button {
+  position: absolute;
+  left: 155px;
+  height: 25px;
+  width: 25px;
+  margin: 6px 0;
+  padding: 3px 3px 0 3px;
+  background: vars.$primary;
+  border: solid 1px vars.$primary;
+  border-radius: 50px;
+  font-family: "Poppins";
+  color: vars.$all--form--btn--text;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.search--bar > button:hover {
+  background: vars.$primary--inverse;
+  color: vars.$primary;
+}
+
+.search--bar > button > span {
+  font-size: 1.4em;
+}
+
+.search--bar > input {
+  height: 25px;
+  border-radius: 20px;
+  border: solid 1px vars.$light-text;
+  font-size: 0.75em;
+}
+
+@media screen and (max-width: 450px) {
+
+  .search--bar {
+    left: 0;
+    margin: 10px auto 0 auto;
+  }
+  
+}

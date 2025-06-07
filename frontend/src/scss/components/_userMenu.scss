@@ -1,0 +1,41 @@
+@use "../vars";
+@use "../fonts";
+
+.user--menu {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 61px;
+  right: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: vars.$shadow--1;
+}
+
+.user--menu--item {
+  margin-right: 2px;
+  background: unset;
+  border: unset;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: vars.$primary;
+  cursor: pointer;
+}
+
+.user--menu--item:nth-child(1) {
+  border-right: vars.$user-menu-item--border;
+}
+
+.user--menu--item:hover {
+  color: vars.$user-menu-item--text--hover;
+}
+
+@media screen and (max-width: 450px) {
+
+  .user--menu {
+    top: 52px;
+  }
+  
+}

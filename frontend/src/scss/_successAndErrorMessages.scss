@@ -1,0 +1,42 @@
+@use "vars";
+@use "fonts";
+
+.flashMessage {
+  z-index: 20;
+  position: fixed;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+div.error {
+  text-align: center;
+  padding: 5px;
+  background: vars.$error--bkg;
+  border: 1px solid vars.$error;
+  font-size: 14px;
+  color: vars.$error;
+}
+
+div.success {
+  text-align: center;
+  padding: 5px;
+  background: vars.$success--bkg;
+  border: 1px solid vars.$success;
+  font-size: 14px;
+  color: vars.$success;
+}
+
+input.error,
+select.error {
+  border: 1px solid vars.$error;
+  outline: 1px solid vars.$error;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}

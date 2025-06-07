@@ -1,0 +1,76 @@
+@use "../vars";
+@use "../fonts";
+
+.page--btn--container {
+  grid-area: pagination;
+  z-index: 2;
+  display: flex;
+  gap: 5px;
+  position: relative;
+  left: 50px;
+  width: fit-content;
+}
+
+.page--btn--container > button {
+  height: 20px;
+  padding: 0;
+  background: transparent;
+  border: solid 1px vars.$primary;
+  border-radius: 4px;
+  color: vars.$primary;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.dots-left, 
+.dots-right {
+  color: vars.$primary;
+}
+
+.dots-left::before,
+.dots-right::after {
+  content: "...";
+  display: inline-block;
+  font-size: larger;
+}
+
+.dots-left:hover::before,
+.dots-right:hover::after {
+  color: vars.$primary--inverse;
+}
+
+.page--btn--container > button > span {
+  font-size: 1.3em;
+}
+
+.page--btn--container > button:hover {
+  background: vars.$primary;
+  color: vars.$all--form--btn--text;
+}
+.page--btn--container > button:disabled {
+  background: transparent;
+  border: solid 1px vars.$light-text;
+  color: vars.$light-text;
+  cursor: default;
+}
+.page--btn--container > .num--page {
+  padding: 0 5px;
+  font-size: 0.8em;
+}
+
+.page--btn--container > .current {
+  background: vars.$primary;
+  color: vars.$all--form--btn--text;
+}
+
+.page--btn--container > .invisible {
+  display: none;
+}
+
+@media screen and (max-width: 450px) {
+
+  .page--btn--container {
+    margin-bottom: 20px;
+  }
+  
+}
