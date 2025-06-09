@@ -1,0 +1,12 @@
+node_modules
+.env
+.vscode/
+.gitattributes
+.DS_Store
+package-lock.json
+frontend/build
+frontend/coverage
+backend/dist
+backend/coverage
+backend/globalConfig.json
+NOTES.md
