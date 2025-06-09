@@ -1,4 +1,4 @@
-# 🏋️‍♂️ Workout Mate
+# Workout Mate
 
 A fitness tracking application that helps you monitor your exercise journey with a clean, intuitive interface.
 
@@ -6,12 +6,12 @@ A fitness tracking application that helps you monitor your exercise journey with
 
 ## ✨ Features
 
-- 📧 **Effective Sign-Up via Email Account**: Users can sign up with their valid email addresses, verified using EtherealMail or NodeMailer functionalities.
-- 👤 **Profile Management**: Customize your username and profile picture.
-- 🏃 **Workout Tracking**: Log exercises with reps and weights.
-- 🍩 **Visual Progress**: Monitor your muscle group balance with an interactive donut chart.
-- 🔑 **Password Recovery**: Secure password reset system via email.
-- 🗂️ **Data Control**: Download your data or manage your account settings.
+- **Effective Sign-Up via Email Account**: Users can sign up with their valid email addresses, verified using EtherealMail or NodeMailer functionalities.
+- **Profile Management**: Customize your username and profile picture.
+- **Workout Tracking**: Log exercises with reps and weights.
+- **Visual Progress**: Monitor your muscle group balance with an interactive donut chart.
+- **Password Recovery**: Secure password reset system via email.
+- **Data Control**: Download your data or manage your account settings.
 
 ---
 
@@ -61,9 +61,9 @@ Click **"Forgot the password?"** to request a reset link via email. Follow the l
 
 ## 🛠️ Local Usage
 
-1. 🌀 Clone this repository
-2. 📝 Create and populate `.env` file
-3. 🗄️ Run this script on your Postgres database after creating the respective login/group role with its password:
+1. Clone this repository
+2. Create and populate `.env` file
+3. Run this script on your Postgres database after creating the respective login/group role with its password:
 
 ```sql
 CREATE TABLE wm_users (
@@ -193,38 +193,38 @@ const transporter = nodemailer.createTransport({
 
 ### 🔙 Backend
 
-- 🟢 NodeJS – Server logic
-- 🚏 Express – Routing
-- 🍃 MongoDB – NoSQL database for workouts
-- 🐘 PostgreSQL – Relational database for user accounts
-- 🦡 Mongoose – MongoDB object modeling
-- 🧂 Bcrypt – Password hashing
-- 📦 Dotenv – Environment variable management
-- 🔗 Cors – Cross-origin resource sharing
-- 🔐 JWT – Authentication and session management
-- 🕵️ Validator – Input validation
-- 📝 Handlebars – Templating for emails
-- ✉️ Ethereal Email – Mock SMTP service for email testing
-- 📬 Nodemailer – SMTP service for email verifications to email accounts for production level
+- NodeJS – Server logic
+- Express – Routing
+- MongoDB – NoSQL database for workouts
+- PostgreSQL – Relational database for user accounts
+- Mongoose – MongoDB object modeling
+- Bcrypt – Password hashing
+- Dotenv – Environment variable management
+- Cors – Cross-origin resource sharing
+- JWT – Authentication and session management
+- Validator – Input validation
+- Handlebars – Templating for emails
+- Ethereal Email – Mock SMTP service for email testing
+- Nodemailer – SMTP service for email verifications to email accounts for production level
 
 #### 🧪 Dev Dependencies
 
-- 🃏 Jest – JavaScript testing framework
-- 🧠 MongoDB Memory Server – In-memory MongoDB instance for tests
-- 🗄️ Shelf Jest MongoDB – Jest preset for MongoDB testing
+- Jest – JavaScript testing framework
+- MongoDB Memory Server – In-memory MongoDB instance for tests
+- Shelf Jest MongoDB – Jest preset for MongoDB testing
 
 ---
 
 ### 🖥️ Frontend
 
-- ⚛️ React – User interface framework
-- 🧭 React Router – Routing in the browser
-- 🗃️ Redux – Global state management
-- ✂️ React Easy Crop – Image cropping utility
-- 📅 Date-fns – Date formatting helpers
-- 📊 ChartJS – Chart rendering library
-- 🔄 React ChartJS – React wrapper for ChartJS
-- 🎨 SASS – CSS preprocessor for styling
+- React – User interface framework
+- React Router – Routing in the browser
+- Redux – Global state management
+- React Easy Crop – Image cropping utility
+- Date-fns – Date formatting helpers
+- ChartJS – Chart rendering library
+- React ChartJS – React wrapper for ChartJS
+- SASS – CSS preprocessor for styling
 
 ---
 
