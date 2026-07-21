@@ -228,7 +228,7 @@ const transporter = nodemailer.createTransport({
 
 ---
 
-## 🚀 Latest Update
+## 🚀 Latest Update - 2026-07-21
 
 Now using MongoDB for both user accounts and workout tracking!
 
