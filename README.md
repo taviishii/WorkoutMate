@@ -228,4 +228,8 @@ const transporter = nodemailer.createTransport({
 
 ---
 
+## 🚀 Latest Update
+
+Now using MongoDB for both user accounts and workout tracking!
+
 > 🚀 **Start tracking your fitness goals and visualizing your progress with Workout Mate!**
