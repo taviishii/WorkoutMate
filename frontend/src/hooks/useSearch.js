@@ -6,7 +6,7 @@ export const useSearch = () => {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const flashMessage = useFlashMessage();
-  const url = process.env.REACT_APP_API || "http://localhost:6060";
+  const url = process.env.REACT_APP_API || "http://localhost:6060/api";
 
   const search = useCallback(async (query, page) => {
     dispatch({ type: "SET_WORKOUTS_LOADER" });
@@ -14,7 +14,7 @@ export const useSearch = () => {
       return flashMessage("ERROR", "Not authorized");
     }
     const response = await fetch(
-      `${url}/api/workouts/?search=${query}&p=${page}`,
+      `${url}/workouts/?search=${query}&p=${page}`,
       {
         credentials: "include",
       }

@@ -4,7 +4,7 @@ import { useFlashMessage } from "./useFlashMessage";
 export const useLogin = () => {
   const dispatch = useDispatch();
   const flashMessage = useFlashMessage();
-  const url = process.env.REACT_APP_API || "http://localhost:6060";
+  const url = process.env.REACT_APP_API || "http://localhost:6060/api";
 
   const login = async (credentials) => {
     dispatch({ type: "SET_USER_LOADER" });
@@ -19,7 +19,7 @@ export const useLogin = () => {
     ) {
       return flashMessage("ERROR", "Please enter valid email address");
     }
-    const response = await fetch(`${url}/api/users/login`, {
+    const response = await fetch(`${url}/users/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

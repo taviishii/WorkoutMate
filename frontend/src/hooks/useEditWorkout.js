@@ -7,7 +7,7 @@ export default function useEditWorkout() {
   const user = useSelector((state) => state.user);
   const workouts = useSelector((state) => state.workouts);
   const { allUserWorkoutsMuscleGroups } = workouts;
-  const url = process.env.REACT_APP_API || "http://localhost:6060";
+  const url = process.env.REACT_APP_API || "http://localhost:6060/api";
 
   const editWorkout = async (id, payload) => {
     if (!user) {
@@ -42,7 +42,7 @@ export default function useEditWorkout() {
     if (payload.load && payload.load > 9999) {
       return flashMessage("ERROR", "Load value too large");
     }
-    const response = await fetch(`${url}/api/workouts/${id}`, {
+    const response = await fetch(`${url}/workouts/${id}`, {
       method: "PATCH",
       body: JSON.stringify(payload),
       headers: {

@@ -4,7 +4,7 @@ import { useFlashMessage } from "./useFlashMessage";
 export default function useResetPassword() {
   const dispatch = useDispatch();
   const flashMessage = useFlashMessage();
-  const url = process.env.REACT_APP_API || "http://localhost:6060";
+  const url = process.env.REACT_APP_API || "http://localhost:6060/api";
 
   const resetPassword = async (token, password, confirmPassword) => {
     dispatch({ type: "SET_USER_LOADER" });
@@ -21,7 +21,7 @@ export default function useResetPassword() {
     if (password !== confirmPassword) {
       return flashMessage("ERROR", "Passwords must match");
     }
-    const response = await fetch(`${url}/api/reset-password/${token}`, {
+    const response = await fetch(`${url}/reset-password/${token}`, {
       method: "PATCH",
       body: JSON.stringify({
         password: password,

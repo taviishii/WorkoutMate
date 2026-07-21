@@ -7,14 +7,14 @@ export function useDownloadData() {
   const dispatch = useDispatch();
   const flashMessage = useFlashMessage();
   const { generateJsonFile, downloadJsonFile } = useGetJsonFile();
-  const url = process.env.REACT_APP_API || "http://localhost:6060";
+  const url = process.env.REACT_APP_API || "http://localhost:6060/api";
 
   const downloadData = async () => {
     dispatch({ type: "SET_USER_LOADER" });
     if (!user) {
       return flashMessage("ERROR", "Not authorized");
     }
-    const response = await fetch(`${url}/api/users/download`, {
+    const response = await fetch(`${url}/users/download`, {
       credentials: "include",
     });
     if (!response.ok) {

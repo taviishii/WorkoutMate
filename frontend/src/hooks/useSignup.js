@@ -4,7 +4,7 @@ import { useFlashMessage } from "./useFlashMessage";
 export const useSignup = () => {
   const dispatch = useDispatch();
   const flashMessage = useFlashMessage();
-  const url = process.env.REACT_APP_API || "http://localhost:6060";
+  const url = process.env.REACT_APP_API || "http://localhost:6060/api";
 
   const signup = async (credentials) => {
     dispatch({ type: "SET_USER_LOADER" });
@@ -25,7 +25,7 @@ export const useSignup = () => {
     ) {
       return flashMessage("ERROR", "Password not strong enough");
     }
-    const response = await fetch(`${url}/api/users/signup`, {
+    const response = await fetch(`${url}/users/signup`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(credentials),

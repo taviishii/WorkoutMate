@@ -7,7 +7,7 @@ export const useCreateWorkout = () => {
   const user = useSelector((state) => state.user);
   const workouts = useSelector((state) => state.workouts);
   const { allUserWorkoutsMuscleGroups } = workouts;
-  const url = process.env.REACT_APP_API || "http://localhost:6060";
+  const url = process.env.REACT_APP_API || "http://localhost:6060/api";
 
   const createWorkout = async (workout) => {
     if (!user) {
@@ -33,7 +33,7 @@ export const useCreateWorkout = () => {
     if (workout.reps > 9999) {
       return flashMessage("ERROR", "Reps value too large");
     }
-    const response = await fetch(`${url}/api/workouts`, {
+    const response = await fetch(`${url}/workouts`, {
       method: "POST",
       body: JSON.stringify(workout),
       headers: {

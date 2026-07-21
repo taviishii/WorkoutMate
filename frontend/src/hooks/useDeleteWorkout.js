@@ -8,13 +8,13 @@ export default function useDeleteWorkout() {
   const workouts = useSelector((state) => state.workouts);
   const page = useSelector((state) => state.page);
   const { workoutsChunk, allUserWorkoutsMuscleGroups, total } = workouts;
-  const url = process.env.REACT_APP_API || "http://localhost:6060";
+  const url = process.env.REACT_APP_API || "http://localhost:6060/api";
 
   const deleteWorkout = async (id) => {
     if (!user) {
       return flashMessage("ERROR", "Not authorized");
     }
-    const response = await fetch(`${url}/api/workouts/${id}`, {
+    const response = await fetch(`${url}/workouts/${id}`, {
       method: "DELETE",
       credentials: "include",
     });

@@ -6,11 +6,11 @@ export const useLogout = () => {
   const flashMessage = useFlashMessage();
   const { hardStateResetAndClearLocalStorage } =
   useHardStateResetAndClearLocalStorage();
-  const url = process.env.REACT_APP_API || "http://localhost:6060";
+  const url = process.env.REACT_APP_API || "http://localhost:6060/api";
 
   const logout = useCallback(async () => {
     const response = await fetch(
-      `${url}/api/users/logout`,
+      `${url}/users/logout`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

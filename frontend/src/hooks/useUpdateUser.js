@@ -6,7 +6,7 @@ export const useUpdateUser = () => {
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const flashMessage = useFlashMessage();
-  const url = process.env.REACT_APP_API || "http://localhost:6060";
+  const url = process.env.REACT_APP_API || "http://localhost:6060/api";
 
   const updateUser = async (username, profileImg) => {
     dispatch({ type: "SET_USER_LOADER" });
@@ -38,7 +38,7 @@ export const useUpdateUser = () => {
     if (username && username.trim()) {
       body.username = username;
     }
-    const response = await fetch(`${url}/api/users`, {
+    const response = await fetch(`${url}/users`, {
       method: "PATCH",
       body: JSON.stringify(body),
       headers: { "Content-type": "application/json" },
