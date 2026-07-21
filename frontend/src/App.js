@@ -110,8 +110,8 @@ function App() {
               path="about"
               element={user ? <Navigate to="/" /> : <About />}
             />
-            <Route path="reset-password" element={<ResetPassword />} />
-            <Route path="confirmaccount" element={<ConfirmedAccount />} />
+            <Route path="reset-password/:token" element={<ResetPassword />} />
+            <Route path="confirm-account/:accountConfirmationToken" element={<ConfirmedAccount />} />
             <Route path="*" element={<NotFound />}/>
           </Routes>
         </div>
