@@ -62,7 +62,7 @@ module.exports = {
       await user.save();
 
       // Send email
-      const confirmUrl = `${process.env.CLIENT_URL || "http://localhost:3000"}/confirm-account/${confirmationToken}`;
+      const confirmUrl = `${process.env.FRONTEND_URL || "http://localhost:3000"}/confirm-account/${confirmationToken}`;
       await sendEmail(
         email,
         "Confirm your WorkoutMate account",

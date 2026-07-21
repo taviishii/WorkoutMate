@@ -25,7 +25,7 @@ module.exports = {
       user.passwordResetTokenExpires = Date.now() + 3600000; // 1 hour
       await user.save();
 
-      const resetUrl = `${process.env.CLIENT_URL || "http://localhost:3000"}/reset-password/${resetToken}`;
+      const resetUrl = `${process.env.FRONTEND_URL || "http://localhost:3000"}/reset-password/${resetToken}`;
       await sendEmail(
         email,
         "Reset your WorkoutMate password",
