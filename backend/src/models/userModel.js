@@ -6,7 +6,11 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: true },
   profile_image: { type: String },
   account_status: { type: String, default: 'pending' },
-  created_at: { type: Date, default: Date.now }
+  created_at: { type: Date, default: Date.now },
+  confirmationToken: { type: String },
+  confirmationTokenExpires: { type: Date },
+  passwordResetToken: { type: String },
+  passwordResetTokenExpires: { type: Date }
 });
 
-module.exports = mongoose.model('User', userSchema); 
+module.exports = mongoose.model('User', userSchema);

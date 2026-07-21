@@ -1,5 +1,12 @@
 version: '3.3'
 services:
+  mongodb:
+    image: mongo:5
+    container_name: wm_mongodb
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodb_data:/data/db
   backend:
     build: ./backend
     env_file:
@@ -10,6 +17,8 @@ services:
     volumes:
       - ./backend:/app
       - /app/node_modules
+    depends_on:
+      - mongodb
   frontend:
     build: ./frontend
     env_file:
@@ -22,3 +31,5 @@ services:
       - /app/node_modules
     stdin_open: true
     tty: true
+volumes:
+  mongodb_data:
